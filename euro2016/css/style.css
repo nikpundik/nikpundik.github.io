@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+html {
+    min-height: 100%;
+}
+body {
+	font-family: 'Source Sans Pro', sans-serif;
+	text-align: center;
+	background: #1f289e;
+	background: -moz-linear-gradient(-45deg, #1f289e 0%, #2989d8 50%, #207cca 51%, #aa2222 100%);
+	background: -webkit-linear-gradient(-45deg, #1f289e 0%,#2989d8 50%,#207cca 51%,#aa2222 100%);
+	background: linear-gradient(135deg, #1f289e 0%,#2989d8 50%,#207cca 51%,#aa2222 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1f289e', endColorstr='#aa2222',GradientType=1 );
+	height: 100%;
+	background-repeat: no-repeat;
+	color: #fff;
+}
+h1 {
+	font-size: 50px;
+	padding-top: 50px;
+	text-shadow: 3px 3px 0px #000;
+}
+h2 {
+	font-size: 150px;
+	margin-top: 10px;
+	text-shadow: 6px 6px 0px #000;
+}
+.text {
+	text-align: left;
+	padding: 20px;
+	max-width: 960px;
+	margin: 0 auto;
+}
+.text ul {
+	margin: 10px 10px;
+}
+.text li {
+	list-style-type: none;
+	list-style-position: inside;
+}
+.telegram-link {
+	margin: 50px 0px;
+}
+.telegram-link a {
+	margin-top: 10px;
+	color: #0088cc;
+	background-color: #fff;
+	padding: 20px;
+	text-decoration: none;
+	border-radius: 2px;
+	box-shadow: 3px 3px 0px #000;
+	display: inline-block;
+}
+strong {
+	font-size: 1.2em;
+}
+.warning {
+	padding: 20px;
+	font-size: 20px;
+	color: yellow;
+}
