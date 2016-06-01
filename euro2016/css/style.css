@@ -68,3 +68,17 @@ strong {
 	font-size: 20px;
 	color: yellow;
 }
+#ball {
+	position: fixed;
+	top:0px;
+	left:0px;
+	width: 150px;
+	height: 150px;
+	transition: transform .1s linear;
+}
+
+@media (max-width: 600px) {
+	#ball {
+		display: none;
+	}
+}

@@ -43,5 +43,52 @@
 		</ul>
 		<p>Se indovini il risultato guadagni 2 punti, mentre indovinando il risultato esatto guadagni 5 punti. Se giochi il bonus (1 volta sola) guadagni il doppio dei punti. Se indovini il vincitore finale del torneo vinci 10 punti.</p>
 	</div>
+
+	<img id="ball" src="img/ball.png" alt="">
+
+	<script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
+	<script type="text/javascript">
+		$(function() {
+			jQuery.fn.translateRotate = function(x, y, degrees) {
+			    $(this).css({'-webkit-transform' : 'translate3d('+ x +'px, '+ y +'px, 0px) rotate('+ degrees +'deg)',
+			                 '-moz-transform' : 'translate3d('+ x +'px, '+ y +'px, 0px) rotate('+ degrees +'deg)',
+			                 '-ms-transform' : 'translate3d('+ x +'px, '+ y +'px, 0px) rotate('+ degrees +'deg)',
+			                 'transform' : 'translate3d('+ x +'px, '+ y +'px, 0px) rotate('+ degrees +'deg)'});
+			    return $(this);
+			};
+
+			var ball = $("#ball");
+			var w = ball.width();
+			var h = ball.height();
+			var pos = ball.position();
+			var rot = 0;
+			var vx = -80;
+			var vy = -170;
+			var t = 0.04;
+			var g = -9.8*10;
+
+			function update() {
+
+				var documentWidth = $(window).width() - w;
+				var documentHeight = $(window).height() - h;
+
+				if (pos.top > documentHeight) vy = Math.abs(vy);
+				if (pos.left < 0) vx = Math.abs(vx);
+				if (pos.left > documentWidth) vx = -Math.abs(vx);
+
+				rot++;
+
+				vy += t*g;
+
+				pos.left += vx*t;
+				pos.top -= vy*t + 0.5*g*t*t;
+
+				ball.translateRotate(pos.left, pos.top, rot);
+			}
+
+			setInterval(update, t*1000);
+
+		});
+	</script>
 </body>
 </html>
