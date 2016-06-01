@@ -53,6 +53,13 @@ h2 {
 	box-shadow: 3px 3px 0px #000;
 	display: inline-block;
 }
+.telegram-link a:hover {
+	-webkit-transform: translateX(1px) translateY(1px);
+	-moz-transform: translateX(1px) translateY(1px);
+	-ms-transform: translateX(1px) translateY(1px);
+	transform: translateX(1px) translateY(2px);
+	box-shadow: 2px 2px 0px #000;
+}
 strong {
 	font-size: 1.2em;
 }
