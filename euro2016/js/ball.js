@@ -18,6 +18,12 @@ $(function() {
 	var t = 0.08;
 	var g = -9.8*factor;
 
+	ball.click(function() {
+		var max = 100;
+		vx = (Math.random()*max - max*0.5)*factor;
+		vy = (Math.random()*max - max*0.5)*factor;
+	});
+
 	function update() {
 
 		var documentWidth = $(window).width() - w;

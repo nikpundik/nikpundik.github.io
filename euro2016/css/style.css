@@ -69,6 +69,7 @@ strong {
 	color: yellow;
 }
 #ball {
+	cursor: url("../img/icon.png"), cell;
 	position: fixed;
 	top:0px;
 	left:0px;
