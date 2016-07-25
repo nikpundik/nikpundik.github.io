@@ -56,7 +56,7 @@ export default class MainScene {
     this.renderer = new THREE.WebGLRenderer({ antialias: true });
     this.renderer.setPixelRatio(window.devicePixelRatio);
     this.renderer.setSize(window.innerWidth, window.innerHeight);
-    this.renderer.setClearColor(0x060508);
+    this.renderer.setClearColor(0x000000);
 
     this.renderer.gammaInput = true;
     this.renderer.gammaOutput = true;

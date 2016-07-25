@@ -158,7 +158,7 @@
 	      this.renderer = new _three2.default.WebGLRenderer({ antialias: true });
 	      this.renderer.setPixelRatio(window.devicePixelRatio);
 	      this.renderer.setSize(window.innerWidth, window.innerHeight);
-	      this.renderer.setClearColor(0x060508);
+	      this.renderer.setClearColor(0x000000);
 
 	      this.renderer.gammaInput = true;
 	      this.renderer.gammaOutput = true;
