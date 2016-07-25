@@ -1,0 +1,37 @@
+{
+  "name": "threejs-starter-npm",
+  "version": "1.0.0",
+  "description": "Partners in crime",
+  "main": "app.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha",
+    "test:watch": "npm run test -- --watch",
+    "build": "webpack",
+    "build:watch": "npm run build -- --watch"
+  },
+  "keywords": [
+    "game",
+    "3d",
+    "three.js"
+  ],
+  "author": "nikpundik",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.5.3",
+    "three": "^0.78.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.10.1",
+    "babel-core": "^6.10.4",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.9.0",
+    "eslint": "^3.0.1",
+    "eslint-config-airbnb-base": "^4.0.0",
+    "eslint-plugin-import": "^1.10.2",
+    "webpack": "^1.13.1"
+  }
+}
