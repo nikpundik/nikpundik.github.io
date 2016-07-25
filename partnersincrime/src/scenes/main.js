@@ -1,9 +1,15 @@
-import THREE from 'three';
+import {
+  Scene,
+  AmbientLight,
+  DirectionalLight,
+  PerspectiveCamera,
+  WebGLRenderer,
+} from 'three';
 
 export default class MainScene {
 
   constructor() {
-    this.scene = new THREE.Scene();
+    this.scene = new Scene();
 
     this.camera();
     this.lights();
@@ -13,7 +19,7 @@ export default class MainScene {
   }
 
   camera() {
-    this.camera = new THREE.PerspectiveCamera(
+    this.camera = new PerspectiveCamera(
       30, window.innerWidth / window.innerHeight, 1, 10000
     );
     this.camera.position.x = 1000;
@@ -23,9 +29,9 @@ export default class MainScene {
   }
 
   lights() {
-    this.scene.add(new THREE.AmbientLight(0x111111));
+    this.scene.add(new AmbientLight(0x111111));
 
-    this.light = new THREE.DirectionalLight(0x555555, 0.75);
+    this.light = new DirectionalLight(0x555555, 0.75);
     this.light.position.set(50, 200, 100);
     this.light.position.multiplyScalar(1.3);
 
@@ -53,7 +59,7 @@ export default class MainScene {
   }
 
   renderer() {
-    this.renderer = new THREE.WebGLRenderer({ antialias: true });
+    this.renderer = new WebGLRenderer({ antialias: true });
     this.renderer.setPixelRatio(window.devicePixelRatio);
     this.renderer.setSize(window.innerWidth, window.innerHeight);
     this.renderer.setClearColor(0x000000);

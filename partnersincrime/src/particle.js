@@ -1,4 +1,4 @@
-import THREE from 'three';
+import { Vector3 } from 'three';
 
 export default class Particle {
 
@@ -6,12 +6,12 @@ export default class Particle {
     this.position = clothFunction(x, y);
     this.previous = clothFunction(x, y);
     this.original = clothFunction(x, y);
-    this.a = new THREE.Vector3(0, 0, 0);
+    this.a = new Vector3(0, 0, 0);
     this.mass = mass;
     this.invMass = 1 / mass;
     this.drag = drag;
-    this.tmp = new THREE.Vector3();
-    this.tmp2 = new THREE.Vector3();
+    this.tmp = new Vector3();
+    this.tmp2 = new Vector3();
   }
 
   addForce(force) {

@@ -1,4 +1,7 @@
-import THREE from 'three';
+import {
+  Vector3,
+
+} from 'three';
 import * as config from './config';
 import Particle from './particle';
 import utils from './utils';
@@ -10,16 +13,16 @@ export default class Cloth {
     this.h = h || 10;
     this.lastTime = null;
     this.pins = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-    this.tmpForce = new THREE.Vector3();
-    this.diff = new THREE.Vector3();
+    this.tmpForce = new Vector3();
+    this.diff = new Vector3();
     this.clothFunction = utils.plane(
       config.restDistance * this.w, config.restDistance * this.h
     );
-    this.windForce = new THREE.Vector3(0, 0, 0);
+    this.windForce = new Vector3(0, 0, 0);
 
     const GRAVITY = 981 * 1.4;
     this.mass = 0.1;
-    this.gravity = new THREE.Vector3(0, -GRAVITY, 0)
+    this.gravity = new Vector3(0, -GRAVITY, 0)
       .multiplyScalar(this.mass);
 
     this.createParticles();

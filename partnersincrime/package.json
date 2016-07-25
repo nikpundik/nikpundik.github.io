@@ -9,8 +9,9 @@
   "scripts": {
     "test": "mocha",
     "test:watch": "npm run test -- --watch",
-    "build": "webpack",
-    "build:watch": "npm run build -- --watch"
+    "build": "webpack -p",
+    "build:dev": "webpack",
+    "build:watch": "npm run build:dev -- --watch"
   },
   "keywords": [
     "game",

@@ -1,4 +1,4 @@
-import THREE from 'three';
+import { Vector3 } from 'three';
 
 export default {
   plane(width, height) {
@@ -7,7 +7,7 @@ export default {
       const y = (v + 0.5) * height;
       const z = 0;
 
-      return new THREE.Vector3(x, y, z);
+      return new Vector3(x, y, z);
     };
   },
 };
