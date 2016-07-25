@@ -92,17 +92,13 @@
 
 	var _three = __webpack_require__(2);
 
-	var _three2 = _interopRequireDefault(_three);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 	var MainScene = function () {
 	  function MainScene() {
 	    _classCallCheck(this, MainScene);
 
-	    this.scene = new _three2.default.Scene();
+	    this.scene = new _three.Scene();
 
 	    this.camera();
 	    this.lights();
@@ -114,7 +110,7 @@
 	  _createClass(MainScene, [{
 	    key: 'camera',
 	    value: function camera() {
-	      this.camera = new _three2.default.PerspectiveCamera(30, window.innerWidth / window.innerHeight, 1, 10000);
+	      this.camera = new _three.PerspectiveCamera(30, window.innerWidth / window.innerHeight, 1, 10000);
 	      this.camera.position.x = 1000;
 	      this.camera.position.y = 50;
 	      this.camera.position.z = 1500;
@@ -123,9 +119,9 @@
 	  }, {
 	    key: 'lights',
 	    value: function lights() {
-	      this.scene.add(new _three2.default.AmbientLight(0x111111));
+	      this.scene.add(new _three.AmbientLight(0x111111));
 
-	      this.light = new _three2.default.DirectionalLight(0x555555, 0.75);
+	      this.light = new _three.DirectionalLight(0x555555, 0.75);
 	      this.light.position.set(50, 200, 100);
 	      this.light.position.multiplyScalar(1.3);
 
@@ -155,7 +151,7 @@
 	  }, {
 	    key: 'renderer',
 	    value: function renderer() {
-	      this.renderer = new _three2.default.WebGLRenderer({ antialias: true });
+	      this.renderer = new _three.WebGLRenderer({ antialias: true });
 	      this.renderer.setPixelRatio(window.devicePixelRatio);
 	      this.renderer.setSize(window.innerWidth, window.innerHeight);
 	      this.renderer.setClearColor(0x000000);
@@ -42081,8 +42077,6 @@
 
 	var _three = __webpack_require__(2);
 
-	var _three2 = _interopRequireDefault(_three);
-
 	var _config = __webpack_require__(4);
 
 	var config = _interopRequireWildcard(_config);
@@ -42095,9 +42089,9 @@
 
 	var _utils2 = _interopRequireDefault(_utils);
 
-	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
-
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -42109,14 +42103,14 @@
 	    this.h = h || 10;
 	    this.lastTime = null;
 	    this.pins = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-	    this.tmpForce = new _three2.default.Vector3();
-	    this.diff = new _three2.default.Vector3();
+	    this.tmpForce = new _three.Vector3();
+	    this.diff = new _three.Vector3();
 	    this.clothFunction = _utils2.default.plane(config.restDistance * this.w, config.restDistance * this.h);
-	    this.windForce = new _three2.default.Vector3(0, 0, 0);
+	    this.windForce = new _three.Vector3(0, 0, 0);
 
 	    var GRAVITY = 981 * 1.4;
 	    this.mass = 0.1;
-	    this.gravity = new _three2.default.Vector3(0, -GRAVITY, 0).multiplyScalar(this.mass);
+	    this.gravity = new _three.Vector3(0, -GRAVITY, 0).multiplyScalar(this.mass);
 
 	    this.createParticles();
 	    this.createConstraints();
@@ -42277,10 +42271,6 @@
 
 	var _three = __webpack_require__(2);
 
-	var _three2 = _interopRequireDefault(_three);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 	var Particle = function () {
@@ -42290,12 +42280,12 @@
 	    this.position = clothFunction(x, y);
 	    this.previous = clothFunction(x, y);
 	    this.original = clothFunction(x, y);
-	    this.a = new _three2.default.Vector3(0, 0, 0);
+	    this.a = new _three.Vector3(0, 0, 0);
 	    this.mass = mass;
 	    this.invMass = 1 / mass;
 	    this.drag = drag;
-	    this.tmp = new _three2.default.Vector3();
-	    this.tmp2 = new _three2.default.Vector3();
+	    this.tmp = new _three.Vector3();
+	    this.tmp2 = new _three.Vector3();
 	  }
 
 	  _createClass(Particle, [{
@@ -42336,10 +42326,6 @@
 
 	var _three = __webpack_require__(2);
 
-	var _three2 = _interopRequireDefault(_three);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
 	exports.default = {
 	  plane: function plane(width, height) {
 	    return function (u, v) {
@@ -42347,7 +42333,7 @@
 	      var y = (v + 0.5) * height;
 	      var z = 0;
 
-	      return new _three2.default.Vector3(x, y, z);
+	      return new _three.Vector3(x, y, z);
 	    };
 	  }
 	};
@@ -42366,10 +42352,6 @@
 
 	var _three = __webpack_require__(2);
 
-	var _three2 = _interopRequireDefault(_three);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 	var ClothView = function () {
@@ -42386,13 +42368,13 @@
 	  _createClass(ClothView, [{
 	    key: 'createGeometry',
 	    value: function createGeometry() {
-	      this.geometry = new _three2.default.ParametricGeometry(this.cloth.clothFunction, this.cloth.w, this.cloth.h);
+	      this.geometry = new _three.ParametricGeometry(this.cloth.clothFunction, this.cloth.w, this.cloth.h);
 	      this.geometry.dynamic = true;
 	    }
 	  }, {
 	    key: 'loadTexture',
 	    value: function loadTexture() {
-	      var loader = new _three2.default.TextureLoader();
+	      var loader = new _three.TextureLoader();
 	      this.clothTexture = loader.load('textures/flag.jpg');
 	      this.clothTexture.anisotropy = 16;
 	      this.uniforms = { texture: { value: this.clothTexture } };
@@ -42400,24 +42382,24 @@
 	  }, {
 	    key: 'createMaterial',
 	    value: function createMaterial() {
-	      this.material = new _three2.default.MeshLambertMaterial({
+	      this.material = new _three.MeshLambertMaterial({
 	        map: this.clothTexture,
-	        side: _three2.default.DoubleSide,
+	        side: _three.DoubleSide,
 	        alphaTest: 0.5
 	      });
 	    }
 	  }, {
 	    key: 'createMesh',
 	    value: function createMesh() {
-	      this.mesh = new _three2.default.Mesh(this.geometry, this.material);
+	      this.mesh = new _three.Mesh(this.geometry, this.material);
 	      this.mesh.position.set(0, 0, 0);
 	      this.mesh.rotation.z = 2.0;
 	      this.mesh.scale.set(3, 3, 3);
 	      this.mesh.castShadow = true;
 
-	      this.mesh.customDepthMaterial = new _three2.default.ShaderMaterial({
+	      this.mesh.customDepthMaterial = new _three.ShaderMaterial({
 	        uniforms: this.uniforms,
-	        side: _three2.default.DoubleSide
+	        side: _three.DoubleSide
 	      });
 	    }
 	  }, {
