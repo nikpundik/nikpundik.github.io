@@ -1,0 +1,93 @@
+#game
+{
+	width: 514px;
+	height: 215px;
+	background-image: url("../img/pitch.jpg");
+	position: relative;
+	font-family: 'VT323';
+	margin: 20px 0px;
+}
+#ball
+{
+	position: absolute;
+	left: 251px;
+	top: 154px;
+	z-index: 3;
+}
+#ball.under
+{
+	z-index: 1;
+}
+#mario
+{
+	position: absolute;
+	left: 227px;
+	bottom: 30px;
+	z-index: 3;
+}
+#goalkeeper-shadow
+{
+	position: absolute;
+	left: 245px;
+	top: 98px;
+	z-index: 1;
+}
+#goalkeeper
+{
+	position: absolute;
+	left: 245px;
+	top: 72px;
+	z-index: 2;
+}
+#goalkeeper.left
+{
+	transform: rotate(-90deg);
+	transition: transform 300ms;
+}
+#goalkeeper.right
+{
+	transform: rotate(90deg);
+	transition: transform 300ms;
+}
+#goal
+{
+	position: absolute;
+	width: 132px;
+	height: 44px;
+	left: 191px;
+	top: 48px;
+	opacity: 0.5;
+	z-index: 5;
+}
+#result
+{
+	left: 48px;
+	top: 16px;
+	position: absolute;
+	width: 80px;
+	height: 32px;
+	color: #0000ff;
+	text-align: center;
+	font-size: 24px;
+	line-height: 32px;
+}
+#marquee
+{
+    height: 20px;
+    left: 355px;
+    position: absolute;
+    top: 34px;
+    width: 94px;
+	font-size: 16px;
+	line-height: 20px;
+	color: #fff;
+	overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+#marquee div
+{
+
+    white-space: nowrap;
+    display: inline-block;
+}
