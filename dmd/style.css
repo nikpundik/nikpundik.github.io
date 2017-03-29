@@ -135,24 +135,45 @@ img {
   background-color: #fff;
   width: 100%;
   height: 10%;
-  top: 45%;
 }
 
-.burger-icon > *:first-child {
+.burger-icon-one {
+  transition: all 0.2s;
   top: 0;
 }
 
-.burger-icon > *:last-child {
-  top: auto;
+.burger-icon-two {
+  transition: opacity 0.2s;
+  top: 45%;
+}
+
+.burger-icon-three {
+  transition: all 0.2s;
   bottom: 0;
 }
 
-.compact-header {
+.compact-header.open .burger-icon-one {
+  transform: rotate(45deg);
+  top: 50%;
+}
+
+.compact-header.open .burger-icon-two {
+  opacity: 0;
+}
+
+.compact-header.open .burger-icon-three {
+  transform: rotate(-45deg);
+  bottom: 40%;
+}
+
+.compact-header.open .compact-items {
+  display: block;
 }
 
 .compact-items {
   padding: 10px 0px;
   background-color: #373839;
+  display: none;
 }
 .compact-items > * {
   color: #fff;
