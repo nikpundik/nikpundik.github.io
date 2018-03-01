@@ -1,0 +1,43 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+html,
+body {
+  height: 100%;
+  font-family: 'Lato', sans-serif;
+}
+canvas {
+  display:block;
+}
+#title {
+  position: fixed;
+  left: 34%;
+  width: 66%;
+  top: 38%;
+  text-align: center;
+  font-size: 2.2rem;
+  color: #fff;
+  letter-spacing: 4rem;
+  text-indent: 4rem;
+  opacity: 0.9;
+  text-shadow: 0 0 1px rgba(255, 255, 255, 0.7);
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  letter-spacing: 2px;
+  text-indent: 2px;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+a+a {
+  left: auto;
+  right: 1rem;
+}
