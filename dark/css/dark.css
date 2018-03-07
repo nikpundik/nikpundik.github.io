@@ -22,6 +22,7 @@ canvas {
   text-indent: 4rem;
   opacity: 0.9;
   text-shadow: 0 0 1px rgba(255, 255, 255, 0.7);
+  pointer-events: none;
 }
 
 a {
