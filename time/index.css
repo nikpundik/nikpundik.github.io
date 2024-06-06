@@ -91,8 +91,8 @@ body {
 
 @media (orientation: landscape) {
   .hours {
-    height: 88%;
-    font-size: 10vh;
+    height: 85%;
+    font-size: 12vh;
   }
 
   .minutes {
@@ -123,8 +123,8 @@ body {
 
 @media (orientation: portrait) {
   .hours {
-    width: 88%;
-    font-size: 10vw;
+    width: 85%;
+    font-size: 12vw;
   }
 
   .minutes {
