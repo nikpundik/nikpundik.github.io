@@ -1,0 +1,262 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Orbitron", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+body {
+  background-color: #111;
+  font-family: "Orbitron", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.container {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.container-minutes {
+  z-index: 2;
+}
+
+.circle {
+  aspect-ratio: 1 / 1;
+  position: relative;
+  transform: rotate3d(0, 0, 0, 0deg);
+  transition: transform 0.1s linear;
+  z-index: 2;
+}
+
+.container-arc {
+  z-index: 0;
+}
+.arc {
+  position: absolute;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background: #222;
+}
+
+.container-arc-mask {
+  z-index: 5;
+}
+.arc-mask {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background: conic-gradient(
+    rgba(255, 0, 0, 0) 20deg,
+    #111 30deg,
+    #111 330deg,
+    rgba(255, 0, 0, 0) 340deg
+  );
+}
+
+.arc-mask-circle {
+  position: absolute;
+  width: 64%;
+  height: 64%;
+  left: 18%;
+  top: 18%;
+  border-radius: 50%;
+  background: #111;
+}
+
+.arc-past {
+  position: absolute;
+  z-index: 8;
+  color: #6d6d6d;
+  transform: rotate(40deg);
+  pointer-events: none;
+}
+
+.arc-future {
+  position: absolute;
+  z-index: 8;
+  color: #6d6d6d;
+  transform: rotate(-40deg);
+  pointer-events: none;
+}
+
+@media (orientation: landscape) {
+  .hours {
+    height: 88%;
+    font-size: 10vh;
+  }
+
+  .minutes {
+    height: 70%;
+    font-size: 5vh;
+  }
+
+  .present {
+    font-size: 7vh;
+  }
+  .arc-mask,
+  .arc {
+    height: 98%;
+  }
+  .arc-past {
+    letter-spacing: 2vh;
+    font-size: 5vh;
+    top: 24%;
+    left: 19%;
+  }
+  .arc-future {
+    letter-spacing: 0.5vh;
+    font-size: 5vh;
+    top: 22%;
+    right: 15%;
+  }
+}
+
+@media (orientation: portrait) {
+  .hours {
+    width: 88%;
+    font-size: 10vw;
+  }
+
+  .minutes {
+    width: 70%;
+    font-size: 5vw;
+  }
+
+  .present {
+    font-size: 7vw;
+  }
+  .arc-mask,
+  .arc {
+    width: 98%;
+  }
+  .arc-past {
+    letter-spacing: 2vw;
+    font-size: 5vw;
+    top: 24%;
+    left: 19%;
+  }
+  .arc-future {
+    letter-spacing: 0.5vw;
+    font-size: 5vw;
+    top: 22%;
+    right: 15%;
+  }
+}
+
+.circle > span {
+  color: white;
+  position: absolute;
+  font-weight: bold;
+  font-family: sans-serif;
+  transform-origin: center center;
+  top: calc(50% - (50% * sin(90deg - 360deg / 12 * var(--index))));
+  left: calc(50% + (50% * cos(90deg - 360deg / 12 * var(--index))));
+  transform: rotate(calc(360deg / 12 * var(--index)));
+}
+
+.circle > span > span {
+  position: absolute;
+  transform-origin: center center;
+  transform: translate(-50%, -50%);
+}
+
+.circle > span:nth-child(1) {
+  --index: 0;
+}
+
+.circle > span:nth-child(2) {
+  --index: 1;
+}
+
+.circle > span:nth-child(3) {
+  --index: 2;
+}
+
+.circle > span:nth-child(4) {
+  --index: 3;
+}
+
+.circle > span:nth-child(5) {
+  --index: 4;
+}
+
+.circle > span:nth-child(6) {
+  --index: 5;
+}
+
+.circle > span:nth-child(7) {
+  --index: 6;
+}
+
+.circle > span:nth-child(8) {
+  --index: 7;
+}
+
+.circle > span:nth-child(9) {
+  --index: 8;
+}
+
+.circle > span:nth-child(10) {
+  --index: 9;
+}
+
+.circle > span:nth-child(11) {
+  --index: 10;
+}
+
+.circle > span:nth-child(12) {
+  --index: 11;
+}
+
+.present {
+  position: absolute;
+  z-index: 8;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #eaea71;
+  font-family: sans-serif;
+  font-weight: bold;
+  pointer-events: none;
+  writing-mode: sideways-lr;
+  text-orientation: mixed;
+  column-gap: 24px;
+  padding: 24px;
+}
+
+.present-line {
+  width: 2px;
+  flex-grow: 1;
+  background-color: #eaea71;
+}
+
+.footer {
+  position: fixed;
+  display: flex;
+  justify-content: right;
+  font-size: 10px;
+  right: 0%;
+  width: 100%;
+  bottom: 0%;
+  color: #6d6d6d;
+  padding: 4px;
+  z-index: 10;
+}
+
+a,
+a:visited {
+  color: white;
+}
