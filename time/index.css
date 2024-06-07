@@ -231,8 +231,8 @@ body {
   font-family: sans-serif;
   font-weight: bold;
   pointer-events: none;
-  writing-mode: sideways-lr;
-  text-orientation: mixed;
+  writing-mode: vertical-lr;
+  transform: scale(-1);
   column-gap: 24px;
   padding: 24px;
 }
